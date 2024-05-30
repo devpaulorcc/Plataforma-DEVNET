@@ -20,7 +20,7 @@
             font-size: 4em;
         }
     </style>
-    <title>NET.DEV</title>
+    <title>DEV.NET</title>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
