@@ -133,7 +133,7 @@
                 <div class="col-md-4">
                     <label for="validationCustom07" class="form-label">Seu link do LinkedIn</label>
                     <div class="input-group has-validation">
-                        <span class="input-group-text" id="inputGroupPrepend">https://</span>
+                        <span class="input-group-text" id="inputGroupPrepend"><i class="bi bi-globe"></i></span>
                         <input type="url" class="form-control" id="validationCustom07" name="linkedinTxt" aria-describedby="inputGroupPrepend" required>
                         <div class="invalid-feedback">
                             Por favor, forneça um link válido.

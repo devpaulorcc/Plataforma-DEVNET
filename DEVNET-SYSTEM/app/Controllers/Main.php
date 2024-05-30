@@ -39,7 +39,8 @@ class Main extends BaseController
             session()->set($dados);
             return redirect()->to('/');
         } else {
-            return redirect()->to('cadastro');
+            $erro['motivo'] = 'Este login é inválido! Por favor, se cadastre primeiro.';
+            return view('error/msg', $erro);
         }
     }
 

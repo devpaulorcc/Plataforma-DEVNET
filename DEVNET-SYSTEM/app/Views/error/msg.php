@@ -18,7 +18,7 @@
                 <div class="card-body">
                     <p>Parece que ocorreu um erro inesperado.</p>
                     <p class="fw-bold"> <?= $motivo ?></p>
-                    <a href="<?= site_url('/') ?>" class="btn btn-danger">Voltar para a Página Inicial</a>
+                    <a href="<?= site_url('/') ?>" class="btn btn-danger">Voltar</a>
                 </div>
             </div>
         </div>
