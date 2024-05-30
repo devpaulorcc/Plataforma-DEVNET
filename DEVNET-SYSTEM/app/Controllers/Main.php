@@ -35,12 +35,7 @@ class Main extends BaseController
         if($resultado == true){
             $dados = [
                 'id' => $resultado->id,
-                'nome' => $resultado->nome,
-                'biografia' => $resultado->biografia,
-                'area' => $resultado->area,
-                'experiencia' => $resultado->experiencia,
-                'numero' => $resultado->numero,
-                'rede_social' => $resultado->rede_social
+                'nome' => $resultado->nome
             ];
             session()->set($dados);
             return redirect()->to('/');
