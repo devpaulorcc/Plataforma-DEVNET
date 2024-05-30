@@ -4,16 +4,16 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class Usuarios extends Model
+class Anuncios extends Model
 {
-    protected $table            = 'usuario';
+    protected $table            = 'anuncio';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'object';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
     protected $allowedFields    = [
-        'email', 'senha', 'nome', 'biografia', 'tecnologia', 'experiencia', 'certificacoes', 'celular', 'rede_social'
+        'id_usuarios', 'nome_criador','titulo', 'tipo', 'descricao', 'tecnologias', 'contatoWhats'
     ];
 
     protected bool $allowEmptyInserts = false;
@@ -46,57 +46,24 @@ class Usuarios extends Model
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
 
-    public function buscarTodos()
+    public function buscarAnuncios()
     {
         $resultado = $this->findAll();
         return $resultado;
     }
 
-    public function buscarPeloID($id)
-    {
-        $resultado = $this->where('id', $id)->first();
-        return $resultado;
-    }
-
-    public function cadastrarDB($email, $senha, $nome, $biografia, $tecnologia, $experiencia, $certificacoes, $celular, $rede_social)
+    public function cadastrarDB($titulo, $tipo, $descricao, $tecnologias, $contatoWhats)
     {
         $dados = [
-            'email' => $email,
-            'senha' => $senha,
-            'nome' => $nome,
-            'biografia' => $biografia,
-            'tecnologia' => $tecnologia,
-            'experiencia' => $experiencia,
-            'certificacoes' => $certificacoes,
-            'celular' => $celular,
-            'rede_social' => $rede_social,
+            'id_usuarios' => session()->get('id'),
+            'nome_criador' => session()->get('nome'),
+            'titulo' => $titulo,
+            'tipo' => $tipo,
+            'descricao' => $descricao,
+            'tecnologias' => $tecnologias,
+            'contatoWhats' => $contatoWhats
         ];
-        
-        $resultado = $this->insert($dados);
-        if($resultado){
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    public function loginDB($email, $senha)
-    {
-        $rEmail = $this->where('email', $email)->first();
-    
-        if($rEmail) {
-            if($rEmail->senha === $senha) {
-                
-                return $rEmail;
-            }
-        }
-    
-        return false;
-    }
-
-    public function atualizarDB($id, $dadosParaAtualizar)
-    {
-        if($this->update($id, $dadosParaAtualizar)){
+        if($this->insert($dados)){
             return true;
         } else {
             return false;

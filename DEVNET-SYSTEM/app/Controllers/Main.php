@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
+use App\Models\Anuncios;
 use App\Models\Usuarios;
 use CodeIgniter\HTTP\ResponseInterface;
 
@@ -34,7 +35,12 @@ class Main extends BaseController
         if($resultado == true){
             $dados = [
                 'id' => $resultado->id,
-                'nome' => $resultado->nome
+                'nome' => $resultado->nome,
+                'biografia' => $resultado->biografia,
+                'area' => $resultado->area,
+                'experiencia' => $resultado->experiencia,
+                'numero' => $resultado->numero,
+                'rede_social' => $resultado->rede_social
             ];
             session()->set($dados);
             return redirect()->to('/');
@@ -44,6 +50,66 @@ class Main extends BaseController
         }
     }
 
+    public function feed()
+    {
+        $modelAnuncios = new Anuncios();
+        $buscaDados = $modelAnuncios->buscarAnuncios();
+        
+        $dados = [
+            'nome' => session()->get('nome'),
+            'numero' => session()->get('celular'),
+            'dados' => $buscaDados
+        ];
+        return view('feed', $dados);
+    }
+
+    public function perfil()
+    {
+        $modelUsuario = new Usuarios();
+        $id = session()->get('id');
+        $dadosDoUsuario = $modelUsuario->buscarPeloID($id);
+        $dados = [
+            'nome' => $dadosDoUsuario->nome,
+            'biografia' => $dadosDoUsuario->biografia,
+            'area' => $dadosDoUsuario->tecnologia,
+            'experiencia' => $dadosDoUsuario->experiencia,
+            'numero' => $dadosDoUsuario->celular,
+            'rede_social' => $dadosDoUsuario->rede_social
+        ];
+        session()->set($dados);
+
+        return view('perfil/perfil', $dados);
+    }
+
+    public function atualizar()
+    {
+        $nome = $this->request->getPost('nome');
+        $biografia = $this->request->getPost('biografia');
+        $area = $this->request->getPost('area');
+        $experiencia = $this->request->getPost('experiencia');
+        $celular = $this->request->getPost('celular');
+        $redeSocial = $this->request->getPost('redeSocial');
+
+        $dados = [
+            'nome' => $nome,
+            'biografia' => $biografia,
+            'tecnologia' => $area,
+            'experiencia' => $experiencia,
+            'celular' => $celular,
+            'rede_social' => $redeSocial
+        ];
+        $id = session()->get('id');
+        $modelUsuario = new Usuarios();
+        $atualizar = $modelUsuario->atualizarDB($id, $dados);
+        if($atualizar == true){
+            return redirect()->to('/');
+        } else {
+            $erro['motivo'] = 'Ocorreu um erro ao atualizar os seus dados.';
+            return view('error/msg', $erro);
+        }
+    }
+    
+    
     public function sairS()
     {
         session()->destroy();

@@ -35,15 +35,15 @@
                 <a class="nav-link active" aria-current="page" href="<?= site_url('/') ?>">Início</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Anunciar</a>
+                <a class="nav-link" href="<?= site_url('feed') ?>" >Feed</a>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Perfil
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#"><i class="bi bi-person-circle"></i> Seu perfil</a></li>
-                  <li><a class="dropdown-item" href="<?= site_url('') ?>"><i class="bi bi-newspaper"></i> Anunciar</a></li>
+                  <li><a class="dropdown-item" href="<?= site_url('seu_perfil') ?>"><i class="bi bi-person-circle"></i> Seu perfil</a></li>
+                  <li><a class="dropdown-item" href="<?= site_url('anunciando') ?>"><i class="bi bi-newspaper"></i> Anunciar</a></li>
                   <li><a class="dropdown-item" href="<?= site_url('/cadastro') ?>"><i class="bi bi-person-plus-fill"></i> Novo perfil</a></li>
                   <li><hr class="dropdown-divider"></li>
                   <li><a class="dropdown-item" href="<?= site_url('sair') ?>"><i class="bi bi-box-arrow-left"></i> Sair</a></li>

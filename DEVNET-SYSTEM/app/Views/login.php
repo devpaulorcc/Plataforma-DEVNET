@@ -23,9 +23,6 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="<?= site_url('/') ?>">Início</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Anunciar</a>
-                    </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Perfil
@@ -62,7 +59,7 @@
                 <input type="password" class="form-control" id="validationCustom02" name="senhaTxt" required>
             </div>
             <div class="col-12 text-center">
-                <button class="btn btn-primary mt-3" type="submit" id="subButton">Login</button>
+                <button class="btn btn-primary mt-3" type="submit" id="subButton">Entrar</button>
             </div>
             <?= form_close() ?>
         </div>
