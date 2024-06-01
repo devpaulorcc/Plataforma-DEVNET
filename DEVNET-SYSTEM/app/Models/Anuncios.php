@@ -69,4 +69,9 @@ class Anuncios extends Model
             return false;
         }
     }
+
+    public function apagarDB($id)
+    {
+        $this->delete($id);
+    }
 }

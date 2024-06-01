@@ -20,3 +20,5 @@ $routes->post('anunciar_sb', 'Anuncio::anunciar_sb');
 
 $routes->get('seu_perfil', 'Main::perfil');
 $routes->post('atualizar', 'Main::atualizar');
+$routes->get('deletando_perfil', 'Main::excluir');
+$routes->get('confirmacao_delete_perfil', 'Main::confirmacao_delete');

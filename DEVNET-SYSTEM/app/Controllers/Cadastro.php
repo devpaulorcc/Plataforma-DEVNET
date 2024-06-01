@@ -37,7 +37,6 @@ class Cadastro extends BaseController
                 'contato' => $contato,
                 'linkedin' => $linkedin
             ];
-            session()->set($dados);
             return redirect()->to('login');
         } else {
             $erro['motivo'] = 'Seu cadastro apresentou um erro...';

@@ -76,6 +76,17 @@ class Main extends BaseController
         return view('perfil/perfil', $dados);
     }
 
+    public function excluir()
+    {
+        $modelUsuario = new Usuarios();
+        $modelAnuncios = new Anuncios();
+        $id = session()->get('id');
+        $modelAnuncios->where('id_usuarios',$id)->delete();
+        $modelUsuario->delete($id);
+        session()->destroy();
+        return redirect()->to('/');
+    }
+
     public function atualizar()
     {
         $nome = $this->request->getPost('nome');
@@ -102,6 +113,11 @@ class Main extends BaseController
             $erro['motivo'] = 'Ocorreu um erro ao atualizar os seus dados.';
             return view('error/msg', $erro);
         }
+    }
+
+    public function confirmacao_delete()
+    {
+        return view('deletar_sim_ou_nao');
     }
     
     

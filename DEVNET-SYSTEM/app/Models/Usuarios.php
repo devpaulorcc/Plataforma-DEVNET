@@ -102,4 +102,11 @@ class Usuarios extends Model
             return false;
         }
     }
+
+    public function apagarDB($id)
+    {
+        $modelAnuncio = new Anuncios();
+        $deletarAnunciosVinculados = $modelAnuncio->
+        $this->delete($id);
+    }
 }

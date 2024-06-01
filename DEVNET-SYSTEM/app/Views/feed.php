@@ -73,7 +73,7 @@
                       <div class="card-body">
                         <h5 class="card-title"><?= $dado->titulo ?></h5>
                         <p class="card-text"><?= $dado->descricao ?></p>
-                        <a href="https://wa.me/<?=$dado->contatoWhats?>" class="btn btn-primary">Entrar em contato</a>
+                        <a href="https://wa.me/55<?=$dado->contatoWhats?>" class="btn btn-primary">Entrar em contato</a>
                       </div>
                     </div>
                 </td>

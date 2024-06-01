@@ -96,6 +96,7 @@
                         </div>
                     </div>
                     <button type="submit" class="btn btn-primary">Atualizar</button>
+                    <a href="<?=site_url('confirmacao_delete_perfil') ?>" class="btn btn-danger">Deletar perfil</a>
                 <?= form_close() ?>
             </div>
         </div>
