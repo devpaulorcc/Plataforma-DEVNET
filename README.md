@@ -50,6 +50,12 @@ Entre no diretório do projeto
 ```bash
   cd .\DEVNET-SYSTEM\
 ```
+Altere o arquio "env" para ".env"
+
+```bash
+  DEVNET-SYSTEM\env
+  DEVNET-SYSTEM\.env
+```
 
 Vincule-se a um banco de dados.
 
@@ -115,7 +121,6 @@ CREATE TABLE anuncio (
 	foreign key anuncio (id_usuarios) REFERENCES usuario(id)
 );
 ```
-
 
 
 ## Padrão de Commit
