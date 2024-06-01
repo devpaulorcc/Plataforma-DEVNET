@@ -50,20 +50,15 @@ Entre no diretório do projeto
 ```bash
   cd .\DEVNET-SYSTEM\
 ```
-Altere o arquio "env" para ".env"
+Altere o arquivo "env" para ".env"
 
 ```bash
-  DEVNET-SYSTEM\env
-  DEVNET-SYSTEM\.env
+  Linux/Mac: mv env .env
+  Windows: ren env .env
 ```
 
-Vincule-se a um banco de dados.
 
-```bash
-  /App/Config/Database.php
-```
-
-Passe os parâmetros do seu banco de dados.
+Configure os parâmetros do seu banco de dados no arquivo Database.php:
 ```bash
   public array $default = [
         'DSN'          => '',
@@ -93,7 +88,7 @@ Passe os parâmetros do seu banco de dados.
 ```
 
 
-O projeto usa essa estrutura para o banco de dados
+O projeto usa a seguinte estrutura para o banco de dados:
 
 ```bash
   CREATE TABLE usuario (
