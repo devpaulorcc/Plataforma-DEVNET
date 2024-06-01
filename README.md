@@ -116,6 +116,17 @@ CREATE TABLE anuncio (
 	foreign key anuncio (id_usuarios) REFERENCES usuario(id)
 );
 ```
+Instale o composer
+
+```bash
+composer install
+```
+Use o seguinte comando para iniciar o projeto
+
+```bash
+php spark serve
+```
+
 
 
 ## Padrão de Commit
