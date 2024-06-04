@@ -53,10 +53,10 @@
                 <a class="nav-link disabled" aria-disabled="true"><?= $nome ?></a>
               </li>
             </ul>
-            <form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder="Busque por tecnologias" aria-label="Search">
+            <?= form_open('feedPesquisa', array('class' => 'd-flex', 'novalidate' => '')) ?>
+              <input class="form-control me-2" type="search" name="campo-pesquisa" placeholder="Busque por tecnologias" aria-label="Search">
               <button class="btn btn-outline-success" type="submit"><i class="bi bi-search"></i></button>
-            </form>
+            <?= form_close()?>
           </div>
         </div>
       </nav>

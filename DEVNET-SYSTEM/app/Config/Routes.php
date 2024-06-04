@@ -7,6 +7,7 @@ use CodeIgniter\Router\RouteCollection;
  */
 $routes->get('/', 'Main::home');
 $routes->get('feed', 'Main::feed');
+$routes->post('feedPesquisa', 'Main::feedPesquisa');
 $routes->get('sair', 'Main::sairS');
 
 $routes->get('login', 'Main::login');

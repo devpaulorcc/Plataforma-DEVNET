@@ -37,10 +37,6 @@
                         <a class="nav-link disabled" aria-disabled="true">Sua rede, sua oportunidade.</a>
                     </li>
                 </ul>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Busque por tecnologias" aria-label="Buscar">
-                    <button class="btn btn-outline-success" type="submit"><i class="bi bi-search"></i></button>
-                </form>
             </div>
         </div>
     </nav>

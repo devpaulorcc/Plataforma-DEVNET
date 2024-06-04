@@ -58,6 +58,31 @@ class Main extends BaseController
         return view('feed', $dados);
     }
 
+    public function feedPesquisa()
+    {
+        $modelAnuncios = new Anuncios();
+        $pesquisa = $this->request->getPost('campo-pesquisa');
+        if($pesquisa == ''){
+            
+            $buscaDados = $modelAnuncios->buscarAnuncios();
+            
+            $dados = [
+                'nome' => session()->get('nome'),
+                'numero' => session()->get('celular'),
+                'dados' => $buscaDados
+            ];
+            return view('feed', $dados);
+        }
+        $buscaDados = $modelAnuncios->buscarAnunciosComPesquisa($pesquisa);
+        
+        $dados = [
+            'nome' => session()->get('nome'),
+            'numero' => session()->get('celular'),
+            'dados' => $buscaDados
+        ];
+        return view('feed', $dados);
+    }
+
     public function perfil()
     {
         $modelUsuario = new Usuarios();

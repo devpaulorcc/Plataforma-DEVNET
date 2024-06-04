@@ -51,7 +51,11 @@ class Anuncios extends Model
         $resultado = $this->findAll();
         return $resultado;
     }
-
+    public function buscarAnunciosComPesquisa($pesquisa)
+    {
+        $resultado = $this->where('titulo', $pesquisa)->findAll();
+        return $resultado;
+    }
     public function cadastrarDB($titulo, $tipo, $descricao, $tecnologias, $contatoWhats)
     {
         $dados = [
