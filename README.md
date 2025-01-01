@@ -1,142 +1,124 @@
-# Projeto-DEVNET
-Uma plataforma para divulgar suas habilidades e receber oportunidades.
+# ✨ Plataforma DEVNET ✨
 
-## Documentação de cores
+Bem-vindo à **Plataforma DEVNET**, onde você pode divulgar suas habilidades e atrair oportunidades!
 
-| Cor               | Hexadecimal                                                |
-| ----------------- | ---------------------------------------------------------------- |
-| Cor mais escura       | ![#000000](https://via.placeholder.com/10/000000?text=+) #000000 |
-| Cor Principal       | ![#0d6efd](https://via.placeholder.com/10/0d6efd?text=+) #0d6efd |
-| Cor Secundária       | ![#EFEFEF](https://via.placeholder.com/10/EFEFEF?text=+) #EFEFEF |
-| Cor mais clara       | ![#FFFFFF](https://via.placeholder.com/10/FFFFFF?text=+) #FFFFFF |
+---
 
-## Tecnologias
+## ★ **Destaques do Projeto**
 
-<div>
-    <img src="https://cdn.simpleicons.org/html5/E34F26" height="40" alt="html5 logo"  />
-  <img width="12" />
-  <img src="https://cdn.simpleicons.org/css3/1572B6" height="40" alt="css3 logo"  />
-  <img width="12" />
-  <img src="https://cdn.simpleicons.org/bootstrap/7952B3" height="40" alt="bootstrap logo"  />
-  <img width="12" />
-  <img src="https://cdn.simpleicons.org/javascript/F7DF1E" height="40" alt="javascript logo"  />
-  <img width="12" />
-  <img src="https://cdn.simpleicons.org/php/777BB4" height="40" alt="php logo"  />
-  <img width="12" />
-  <img src="https://cdn.simpleicons.org/codeigniter/EF4223" height="40" alt="codeigniter logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" height="40" alt="mysql logo"  />
-  <img width="12" />
-  <img src="https://cdn.simpleicons.org/git/F05032" height="40" alt="git logo"  />
-</div>
+- 🔑 **Cadastro e Login**: Simples e seguro.
+- 📚 **Perfis Personalizados**: Destaque suas habilidades e experiências.
+- ⚙️ **Gestão de Dados**: Edite ou exclua suas informações a qualquer momento.
+- 🔍 **Busca por Talentos**: Encontre outros desenvolvedores.
 
-## Funcionalidades
+---
 
-- Login e cadastro
-- Visualização de desenvolvedores
-- Delete e edição de dados
+## 🔧 **Tecnologias Utilizadas**
 
+- **Frontend:** HTML5, CSS3, Bootstrap, JavaScript.
+- **Backend:** PHP, CodeIgniter.
+- **Banco de Dados:** MySQL.
+- **Controle de Versão:** Git.
 
-## Rodando localmente
+---
 
-Clone o projeto
+## 🔬 **Cores do Projeto**
 
-```bash
-  git clone https://github.com/devpaulo2077/Projeto-DEVNET.git
+| Cor             | Hexadecimal |
+|-----------------|-------------|
+| Cor mais escura | `#000000`   |
+| Cor principal   | `#0d6efd`   |
+| Cor secundária  | `#EFEFEF`   |
+| Cor mais clara  | `#FFFFFF`   |
+
+---
+
+## 🔼 **Como Executar Localmente**
+
+### Passos Rápidos:
+
+1. **Clone o repositório:**
+
+   ```bash
+   git clone https://github.com/devpaulorcc/platform-devnet.git
+   ```
+
+2. **Acesse o diretório do projeto:**
+
+   ```bash
+   cd platform-devnet/DEVNET-SYSTEM
+   ```
+
+3. **Renomeie o arquivo `env` para `.env`:**
+
+   - **Linux/Mac:**
+     ```bash
+     mv env .env
+     ```
+   - **Windows:**
+     ```cmd
+     ren env .env
+     ```
+
+4. **Configure os parâmetros do banco de dados no arquivo `Database.php`:**
+
+   ```php
+   public array $default = [
+       'DSN'      => '',
+       'hostname' => 'seu_host',
+       'username' => 'seu_usuario',
+       'password' => 'sua_senha',
+       'database' => 'seu_banco_de_dados',
+       'DBDriver' => 'MySQLi',
+   ];
+   ```
+
+5. **Instale as dependências do Composer:**
+
+   ```bash
+   composer install
+   ```
+
+6. **Execute as migrações para criar as tabelas no banco de dados:**
+
+   ```bash
+   php spark migrate
+   ```
+
+7. **Inicie o servidor de desenvolvimento:**
+
+   ```bash
+   php spark serve
+   ```
+
+8. **Acesse a aplicação no navegador:**
+
+   ```
+   http://localhost:8080
+   ```
+
+---
+
+## 🌐 **Estrutura do Projeto**
+
+```
+platform-devnet/
+├── DEVNET-SYSTEM/
+│   ├── app/
+│   ├── public/
+│   ├── writable/
+│   ├── env
+│   └── ...
+├── README.md
+└── ...
 ```
 
-Entre no diretório do projeto
+---
 
-```bash
-  cd .\DEVNET-SYSTEM\
-```
-Altere o arquivo "env" para ".env"
+## ⚖️ **Licença**
 
-```bash
-  Linux/Mac: mv env .env
-  Windows: ren env .env
-```
+Este projeto está licenciado sob a Licença MIT. Veja o arquivo `LICENSE` para mais detalhes.
 
+---
 
-Configure os parâmetros do seu banco de dados no arquivo Database.php:
-```bash
-  public array $default = [
-        'DSN'          => '',
-        'hostname'     => 'host_da_sua_db',
-        'username'     => 'username_da_sua_db',
-        'password'     => 'password_da_sua_db',
-        'database'     => 'nome_da_sua_db',
-        'DBDriver'     => 'MySQLi',
-        'DBPrefix'     => '',
-        'pConnect'     => false,
-        'DBDebug'      => true,
-        'charset'      => 'utf8mb4',
-        'DBCollat'     => 'utf8mb4_general_ci',
-        'swapPre'      => '',
-        'encrypt'      => false,
-        'compress'     => false,
-        'strictOn'     => false,
-        'failover'     => [],
-        'port'         => 3306,
-        'numberNative' => false,
-        'dateFormat'   => [
-            'date'     => 'Y-m-d',
-            'datetime' => 'Y-m-d H:i:s',
-            'time'     => 'H:i:s',
-        ],
-    ];
-```
-
-
-O projeto usa a seguinte estrutura para o banco de dados:
-
-```bash
-  CREATE TABLE usuario (
-	id int(10) auto_increment primary key,
-    email varchar(200),
-    senha varchar(50),
-    nome varchar(80),
-    biografia varchar(255),
-    tecnologia varchar(50),
-    experiencia varchar(15),
-    certificacoes varchar(255),
-    celular varchar(11),
-    rede_social varchar(255)
-);
-
-CREATE TABLE anuncio (
-	id int(10) auto_increment primary key,
-    id_usuarios int(10),
-    nome_criador varchar(80),
-    titulo varchar(100),
-    tipo varchar(20),
-    descricao varchar(255),
-    tecnologias varchar(255),
-    contatoWhats varchar(11),
-	foreign key anuncio (id_usuarios) REFERENCES usuario(id)
-);
-```
-Instale o composer
-
-```bash
-composer install
-```
-Use o seguinte comando para iniciar o projeto
-
-```bash
-php spark serve
-```
-
-
-
-## Padrão de Commit
-
-- 📦 UPDATE - O arquivo foi atualizado
-
-- ✏️ CREATE - O arquivo foi criado
-
-- ❌ DELETE - O arquivo foi apagado
-
-- 🛠️ FIX - O arquivo foi concertado
-
-- 🕷️ BUG - O arquivo está apresentando bugs
+🚀 **Explore e conecte-se na Plataforma DEVNET!**
